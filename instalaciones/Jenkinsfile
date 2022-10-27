@@ -1,37 +1,21 @@
 pipeline {
-  agent any 
-  
-  stages {
+    agent any
 
-    stage("paso 1"){
-        
+    stages {
         stage('Build') {
-                steps {
-                    echo 'Building..'
-                }
+            steps {
+                echo 'Building..'
+            }
         }
         stage('Test') {
-                steps {
-                    echo 'Testing..'
-                }
+            steps {
+                echo 'Testing..'
+            }
         }
         stage('Deploy') {
-                steps {
-                    echo 'Deploying....'
-                }
+            steps {
+                echo 'Deploying....'
+            }
         }
-      }
-      post {
-        always {          
-              sh "echo 'fase always'"
-        }
-        success {
-              sh "echo 'fase success'"
-        }
-        failure {
-              sh "echo 'fase failure'"
-        }
-
-  }
-}  
-
+    }
+}
